@@ -46,6 +46,11 @@ export const BASE_TEMPLATES: Template[] = [
             <ScrollTriggeredExample />
           </section>
         )
+      },
+      {
+        type: "page",
+        page: 2,
+        element: <ScrollTriggeredExample />
       }
     ]
   }
