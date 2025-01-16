@@ -1,11 +1,13 @@
 "use client";
 
-import React, { ReactElement, useState } from "react";
-import { WorkData } from "../types";
+import React, { type ReactElement, useState } from "react";
+import { useRouter } from "next/navigation";
+
+import { WORK_DATAS } from "@/app/atoms/workDatas";
 import { Pagination } from "antd";
 import { useSetAtom } from "jotai";
-import { WORK_DATAS } from "@/app/atoms/workDatas";
-import { useRouter } from "next/navigation";
+
+import { type WorkData } from "../types";
 
 interface Props {
   workDatas: WorkData[];

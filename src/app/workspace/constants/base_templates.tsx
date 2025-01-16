@@ -1,6 +1,8 @@
 import Image from "next/image";
-import { Template } from "../types";
+
 import * as motion from "motion/react-client";
+
+import { type Template } from "../types";
 import ScrollTriggeredExample from "./SampleScrollAnimation";
 
 export const BASE_TEMPLATES: Template[] = [

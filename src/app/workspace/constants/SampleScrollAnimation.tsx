@@ -1,7 +1,9 @@
-import * as motion from "motion/react-client";
-import type { Variants } from "motion/react";
+import { type ReactElement } from "react";
 
-export default function ScrollTriggeredExample() {
+import type { Variants } from "motion/react";
+import * as motion from "motion/react-client";
+
+export default function ScrollTriggeredExample(): ReactElement {
   return (
     <div style={containerStyle}>
       {content.map((item, index) => (
@@ -16,7 +18,7 @@ interface ScrollItemProps {
   index: number;
 }
 
-function ScrollItem({ text, index }: ScrollItemProps) {
+function ScrollItem({ text, index }: ScrollItemProps): ReactElement {
   return (
     <motion.div
       className={`scroll-item-${index}`}

@@ -21,7 +21,8 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
-    "next"
+    "next",
+    "next/core-web-vitals"
   ],
   ignorePatterns: ["stories/", "src/legacy/"],
   rules: {

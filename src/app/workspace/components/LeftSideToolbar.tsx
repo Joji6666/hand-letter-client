@@ -1,6 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { type ReactElement } from "react";
+
+import { type WorkData } from "../types";
 import TemplateList from "./TemplateList";
-import { WorkData } from "../types";
 
 interface Props {
   setWorkDatas: React.Dispatch<React.SetStateAction<WorkData[]>>;
