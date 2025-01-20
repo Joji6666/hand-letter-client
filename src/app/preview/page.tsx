@@ -18,8 +18,7 @@ const PreviewPage = (): ReactElement => {
   const motionDivRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
+    container: motionDivRef
   });
 
   const workDatas = useAtomValue(WORK_DATAS);
