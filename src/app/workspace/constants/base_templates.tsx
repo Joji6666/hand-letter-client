@@ -1,8 +1,10 @@
 import Image from "next/image";
 
+import ScrollAnimationWrapper from "@/app/shared/assets/ScrollAnimationWrapper";
 import * as motion from "motion/react-client";
 
-import Gallery from "../components/Gallery";
+import CountdownElement from "../../shared/assets/CountDown";
+import Gallery from "../../shared/assets/Gallery";
 import { type Template } from "../types";
 import ScrollTriggeredExample from "./SampleScrollAnimation";
 
@@ -58,7 +60,16 @@ export const BASE_TEMPLATES: Template[] = [
       {
         type: "gallery",
         page: 3,
-        element: <Gallery />
+        element: (
+          <ScrollAnimationWrapper>
+            <Gallery />
+          </ScrollAnimationWrapper>
+        )
+      },
+      {
+        type: "countdown",
+        page: 4,
+        element: <CountdownElement />
       }
     ]
   }

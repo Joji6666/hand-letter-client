@@ -28,6 +28,7 @@ export type NodeType =
   | "guestBook"
   | "attendanceStatus"
   | "accountInformation"
-  | "personInformation";
+  | "personInformation"
+  | "countdown";
 
 export type Align = "start" | "center" | "end";
