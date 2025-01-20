@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import * as motion from "motion/react-client";
 
+import Gallery from "../components/Gallery";
 import { type Template } from "../types";
 import ScrollTriggeredExample from "./SampleScrollAnimation";
 
@@ -53,6 +54,11 @@ export const BASE_TEMPLATES: Template[] = [
         type: "page",
         page: 2,
         element: <ScrollTriggeredExample />
+      },
+      {
+        type: "gallery",
+        page: 3,
+        element: <Gallery />
       }
     ]
   }

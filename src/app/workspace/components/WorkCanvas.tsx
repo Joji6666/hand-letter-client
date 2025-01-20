@@ -16,7 +16,6 @@ interface Props {
 
 const WorkCanvas = ({ workDatas, setCurrentWorkType }: Props): ReactElement => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(5);
 
   const setWorkDatas = useSetAtom(WORK_DATAS);
 
@@ -56,7 +55,7 @@ const WorkCanvas = ({ workDatas, setCurrentWorkType }: Props): ReactElement => {
         <Pagination
           className="flex items-center justify-center"
           defaultCurrent={1}
-          total={totalPage}
+          total={workDatas.length}
           pageSize={1}
           onChange={handlePage}
         />

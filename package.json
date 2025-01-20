@@ -18,6 +18,7 @@
     "@ant-design/nextjs-registry": "^1.0.2",
     "antd": "^5.22.7",
     "jotai": "^2.11.0",
+    "lightgallery": "^2.8.2",
     "motion": "^11.18.0",
     "next": "15.1.2",
     "react": "^19.0.0",

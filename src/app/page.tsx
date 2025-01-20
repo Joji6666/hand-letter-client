@@ -1,7 +1,9 @@
+import { type ReactElement } from "react";
 import Image from "next/image";
+
 import Slick from "./shared/components/layout/Slick";
 
-export default function Home() {
+export default function Home(): ReactElement {
   return (
     <main className="w-full h-full justify-center items-center">
       <Slick />
