@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import Location from "@/app/shared/assets/Location";
 import ScrollAnimationWrapper from "@/app/shared/assets/ScrollAnimationWrapper";
 import * as motion from "motion/react-client";
 
@@ -70,6 +71,11 @@ export const BASE_TEMPLATES: Template[] = [
         type: "countdown",
         page: 4,
         element: <CountdownElement />
+      },
+      {
+        type: "location",
+        page: 5,
+        element: <Location />
       }
     ]
   }
