@@ -23,7 +23,8 @@ export default function Gallery(): ReactElement {
   ];
 
   return (
-    <div className="p-4">
+    <div className="p-4 flex flex-col gap-10 items-center justify-center">
+      <h2>사진 갤러리</h2>
       <LightGallery
         onInit={onInit}
         speed={500}

@@ -6,6 +6,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Navbar from "./shared/components/layout/Navbar";
 
 import "./globals.css";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "모바일 청첩장은 메리엠!",
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="kr">
       <body>
-        <AntdRegistry>
-          <Navbar />
-          {children}
-        </AntdRegistry>
+        <Providers>
+          <AntdRegistry>
+            <Navbar />
+            {children}
+          </AntdRegistry>
+        </Providers>
       </body>
     </html>
   );

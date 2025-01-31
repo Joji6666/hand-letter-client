@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import AccountInformation from "@/app/shared/assets/AccountInformation";
 import Location from "@/app/shared/assets/Location";
 import ScrollAnimationWrapper from "@/app/shared/assets/ScrollAnimationWrapper";
 import * as motion from "motion/react-client";
@@ -76,6 +77,11 @@ export const BASE_TEMPLATES: Template[] = [
         type: "location",
         page: 5,
         element: <Location />
+      },
+      {
+        type: "accountInformation",
+        page: 6,
+        element: <AccountInformation />
       }
     ]
   }

@@ -1,5 +1,6 @@
 import { type ReactElement, useState } from "react";
 
+import * as motion from "motion/react-client";
 import Countdown from "react-countdown";
 
 export default function CountdownElement(): ReactElement {
@@ -11,7 +12,16 @@ export default function CountdownElement(): ReactElement {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <motion.section
+      initial={{ opacity: 0, scale: 0 }}
+      whileInView={{ opacity: 1, scale: 1 }} // 뷰포트에 들어왔을 때 애니메이션
+      viewport={{ once: true, amount: 0.5 }} // 한번만 실행, 50% 보였을 때 트리거
+      transition={{
+        duration: 0.4,
+        scale: { type: "spring", visualDuration: 0.4, bounce: 0.1 }
+      }}
+      className="w-full flex flex-col items-center justify-center"
+    >
       {!isCompleted ? (
         <>
           <h1>시작까지</h1>
@@ -34,6 +44,6 @@ export default function CountdownElement(): ReactElement {
           <p>이제 새로운 UI를 보여줍니다.</p>
         </div>
       )}
-    </div>
+    </motion.section>
   );
 }
