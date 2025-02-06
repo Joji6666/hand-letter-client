@@ -1,18 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { type ReactElement, useState } from "react";
 import Link from "next/link";
 
-import ProfileIcon from "../icons/ProfileIcon";
 import BagIcon from "../icons/BagIcon";
+import ProfileIcon from "../icons/ProfileIcon";
 
-export default function Navbar() {
+export default function Navbar(): ReactElement {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="h-[6vh] flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2  lg:flex-wrap lg:justify-start lg:py-4">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
-        {/* Hamburger button for mobile view */}
         <button
           className="block border-0 bg-transparent px-2 text-black/50 hover:no-underline focus:outline-none focus:ring-0  lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
@@ -33,25 +32,23 @@ export default function Navbar() {
           </span>
         </button>
 
-        {/* Collapsible navigation container */}
         <div
           className={`${
             isOpen ? "block" : "hidden"
           } flex-grow basis-[100%] items-center lg:!flex lg:basis-auto`}
           id="navbarSupportedContent1"
         >
-          {/* Logo */}
           <Link
             href="/"
             className="mb-4 me-5 ms-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 lg:mb-0 lg:mt-0"
           >
             M
           </Link>
-          {/* Left navigation links */}
+
           <ul className="list-style-none me-auto flex flex-col ps-0 lg:flex-row">
             <li className="mb-4 lg:mb-0 lg:pe-2">
               <Link
-                href="#"
+                href="/workspace"
                 className="text-black/60 hover:text-black/80  lg:px-2"
               >
                 모바일 청첩장
@@ -59,7 +56,7 @@ export default function Navbar() {
             </li>
             <li className="mb-4 lg:mb-0 lg:pe-2">
               <Link
-                href="#"
+                href="/workspace"
                 className="text-black/60 hover:text-black/80  lg:px-2"
               >
                 돌잔치 초대장
@@ -67,7 +64,7 @@ export default function Navbar() {
             </li>
             <li className="mb-4 lg:mb-0 lg:pe-2">
               <Link
-                href="#"
+                href="/workspace"
                 className="text-black/60 hover:text-black/80   lg:px-2"
               >
                 기타 초대장
@@ -76,14 +73,13 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Right elements */}
         <div className="relative flex items-center">
-          <Link href="#" className="me-4 text-neutral-600 ">
+          <Link href="/workspace" className="me-4 text-neutral-600 ">
             <BagIcon />
           </Link>
 
           <div className="relative">
-            <Link href="#">
+            <Link href="/workspace">
               <ProfileIcon />
             </Link>
           </div>

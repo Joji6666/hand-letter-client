@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 import Navbar from "./shared/components/layout/Navbar";
+import { Providers } from "./providers";
 
 import "./globals.css";
-import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "모바일 청첩장은 메리엠!",

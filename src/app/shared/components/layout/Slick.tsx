@@ -1,10 +1,12 @@
 "use client";
 
-import React, { ReactElement } from "react";
+import React, { type ReactElement } from "react";
+import Image from "next/image";
+
 import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
 
 const settings = {
   dots: true,
@@ -29,7 +31,7 @@ const Slick = (): ReactElement => {
           <Image
             src={"/images/slick/image_1.webp"}
             alt="slick-image"
-            layout="fill" // 이미지가 부모 컨테이너에 맞게 채워짐
+            layout="fill"
           />
         </div>
 

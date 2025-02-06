@@ -8,14 +8,14 @@ export default function CountdownElement(): ReactElement {
   const [isCompleted, setIsCompleted] = useState(false);
 
   const handleComplete = (): void => {
-    setIsCompleted(true); // 카운트다운 완료 시 상태 업데이트
+    setIsCompleted(true);
   };
 
   return (
     <motion.section
       initial={{ opacity: 0, scale: 0 }}
-      whileInView={{ opacity: 1, scale: 1 }} // 뷰포트에 들어왔을 때 애니메이션
-      viewport={{ once: true, amount: 0.5 }} // 한번만 실행, 50% 보였을 때 트리거
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
       transition={{
         duration: 0.4,
         scale: { type: "spring", visualDuration: 0.4, bounce: 0.1 }
@@ -27,7 +27,7 @@ export default function CountdownElement(): ReactElement {
           <h1>시작까지</h1>
           <Countdown
             date={targetDate}
-            onComplete={handleComplete} // 카운트다운 완료 시 호출
+            onComplete={handleComplete}
             renderer={({ days, hours, minutes, seconds }) => (
               <div className="w-full flex items-center justify-center gap-4">
                 <p>{days}:</p>

@@ -3,19 +3,18 @@ import React, { type ReactElement, type ReactNode } from "react";
 import type { Variants } from "motion/react";
 import * as motion from "motion/react-client";
 
-// 애니메이션 정의
 const itemVariants: Variants = {
   hidden: {
-    y: 100, // 아래로 100px 위치
-    opacity: 0 // 완전히 투명
+    y: 100,
+    opacity: 0
   },
   visible: {
-    y: 0, // 제자리로 이동
-    opacity: 1, // 불투명
+    y: 0,
+    opacity: 1,
     transition: {
-      type: "spring", // 스프링 애니메이션
-      stiffness: 50, // 스프링 강도
-      damping: 10 // 스프링 감쇠율
+      type: "spring",
+      stiffness: 50,
+      damping: 10
     }
   }
 };

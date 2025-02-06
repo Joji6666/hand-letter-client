@@ -1,5 +1,6 @@
-import ky, { KyResponse } from "ky";
-import { ProjectResponse } from "../types/response";
+import ky, { type KyResponse } from "ky";
+
+import { type ProjectResponse } from "../types/response";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 const END_POINT = "/project";
@@ -12,12 +13,11 @@ const projectApi = ky.create({
   },
   hooks: {
     afterResponse: [
-      async (request, options, response) => {
+      async (request, options, response): Promise<KyResponse> => {
         console.log(`Response status: ${response.status}`);
 
-        // ✅ 400~500대 에러 처리
         if (!response.ok) {
-          const errorData = await response.json().catch(() => null); // JSON 파싱 실패 방지
+          // const errorData = await response.json().catch(() => null);
           const errorMessage = `HTTP Error ${response.status}`;
           throw new Error(errorMessage);
         }
@@ -25,7 +25,8 @@ const projectApi = ky.create({
         return response;
       }
     ]
-  }
+  },
+  credentials: "include"
 });
 
 const getUserProjects = async (

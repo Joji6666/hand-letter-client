@@ -5,8 +5,8 @@ import { type ReactElement, useState } from "react";
 import LeftSideToolbar from "./components/LeftSideToolbar";
 import RightSideToolbar from "./components/RightSideToolbar";
 import WorkCanvas from "./components/WorkCanvas";
-import { type WorkData } from "./types";
 import { useGetProjects } from "./hooks/query/useGetProjects";
+import { type WorkData } from "./types";
 
 export default function Home(): ReactElement {
   const [workDatas, setWorkDatas] = useState<WorkData[]>([]);

@@ -1,7 +1,7 @@
 import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 
-import { ProjectResponse } from "../../types/response";
 import { getUserProjects } from "../../api/project";
+import { type ProjectResponse } from "../../types/response";
 
 const USER_PROJECTS_QUERY_KEY = "user_projects";
 

@@ -1,10 +1,14 @@
 "use client";
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useState } from "react";
+import { type ReactElement, useState } from "react";
 
-export function Providers({ children }: { children: React.ReactNode }) {
-  // QueryClient는 useState로 관리하여 Hydration이 유지되도록 함
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+export function Providers({
+  children
+}: {
+  children: React.ReactNode;
+}): ReactElement {
   const [queryClient] = useState(() => new QueryClient());
 
   return (

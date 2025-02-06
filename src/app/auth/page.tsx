@@ -2,9 +2,12 @@
 
 import React, { type ReactElement, useState } from "react";
 
+import ky from "ky";
+
 import Button from "../shared/components/buttons/Button";
 import TextInput from "../shared/components/inputs/TextInput";
-import ky from "ky";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const AuthPage = (): ReactElement => {
   const [userId, setUserId] = useState("");
@@ -19,16 +22,16 @@ const AuthPage = (): ReactElement => {
   };
 
   const signUp = async (): Promise<void> => {
-    const res = await ky.post(`${process.env.NEXT_PUBLIC_API_URL}/auth`, {
-      json: { userId, password } // ✅ JSON 데이터 자동 변환
+    const res = await ky.post(`${API_URL}/auth`, {
+      json: { userId, password }
     });
 
     console.log(res, "res @");
   };
   const login = async (): Promise<void> => {
-    const res = await ky.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
-      json: { userId, password }, // ✅ JSON 데이터 전송
-      credentials: "include" // ✅ 쿠키 포함 요청
+    const res = await ky.post(`${API_URL}/auth/login`, {
+      json: { userId, password },
+      credentials: "include"
     });
 
     console.log(res, "res @");

@@ -33,24 +33,22 @@ function ScrollItem({ text, index }: ScrollItemProps): ReactElement {
   );
 }
 
-// 애니메이션 정의
 const itemVariants: Variants = {
   hidden: {
-    y: 100, // 아래로 100px 위치
-    opacity: 0 // 완전히 투명
+    y: 100,
+    opacity: 0
   },
   visible: {
-    y: 0, // 제자리로 이동
-    opacity: 1, // 불투명
+    y: 0,
+    opacity: 1,
     transition: {
-      type: "spring", // 스프링 애니메이션
-      stiffness: 50, // 스프링 강도
-      damping: 10 // 스프링 감쇠율
+      type: "spring",
+      stiffness: 50,
+      damping: 10
     }
   }
 };
 
-// 스타일
 const containerStyle: React.CSSProperties = {
   margin: "0 auto",
   padding: "50px 0",
@@ -70,7 +68,6 @@ const itemStyle: React.CSSProperties = {
   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
 };
 
-// 콘텐츠 데이터
 const content = [
   "Scroll-triggered animation 1",
   "Scroll-triggered animation 2",

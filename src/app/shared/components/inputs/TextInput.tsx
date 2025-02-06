@@ -2,7 +2,7 @@ import React, { type ChangeEvent, type ReactElement } from "react";
 
 interface Props
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
-  onChange?: (value: string) => void; // 사용자 정의 onChange
+  onChange?: (value: string) => void;
 }
 
 const TextInput = ({ onChange, ...rest }: Props): ReactElement => {
@@ -12,7 +12,7 @@ const TextInput = ({ onChange, ...rest }: Props): ReactElement => {
       type="text"
       onChange={(e: ChangeEvent<HTMLInputElement>) => {
         if (onChange) {
-          onChange(e.target.value); // 사용자 정의 onChange 호출
+          onChange(e.target.value);
         }
       }}
       className={`w-full p-2 border rounded  hover:border-blue-500 ${rest.className || ""}`}

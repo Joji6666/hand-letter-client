@@ -5,11 +5,10 @@ import { useRouter } from "next/navigation";
 
 import { WORK_DATAS } from "@/app/atoms/workDatas";
 import { Pagination } from "antd";
-
 import { useSetAtom } from "jotai";
+import ky from "ky";
 
 import { type WorkData } from "../types";
-import ky from "ky";
 
 interface Props {
   workDatas: WorkData[];

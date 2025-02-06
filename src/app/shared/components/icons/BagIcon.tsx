@@ -1,6 +1,6 @@
-import React from "react";
+import React, { type ReactElement } from "react";
 
-const BagIcon = () => {
+const BagIcon = (): ReactElement => {
   return (
     <svg
       width="24px"
