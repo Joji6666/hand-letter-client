@@ -1,43 +1,52 @@
-import { type ReactElement } from "react";
-import Image from "next/image";
+"use client";
 
-import Slick from "./shared/components/layout/Slick";
+import { type ReactElement, useEffect } from "react";
+
+import CTA from "./shared/components/layout/CTA";
+import FAQ from "./shared/components/layout/FAQ";
+import Features from "./shared/components/layout/Features";
+import Hero from "./shared/components/layout/Hero";
+import Pricing from "./shared/components/layout/Pricing";
+import ScrollToTop from "./shared/components/layout/ScrollToTop";
+import Templates from "./shared/components/layout/Templates";
 
 export default function Home(): ReactElement {
+  useEffect(() => {
+    // Handle scroll animations
+    const handleScroll = (): void => {
+      const scrollElements = document.querySelectorAll(".scroll-animate");
+
+      scrollElements.forEach((element) => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (elementPosition < screenHeight * 0.85) {
+          element.classList.add("opacity-100");
+          element.classList.remove("opacity-0");
+          element.classList.remove("translate-y-4");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Initial check on load
+    setTimeout(handleScroll, 100);
+
+    return (): void => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <main className="w-full h-full justify-center items-center">
-      <Slick />
-      <section className="w-full flex justify-between items-center">
-        <div className="relative w-1/2 h-[500px] overflow-hidden">
-          <Image
-            src={"/images/main/mobile_1.jpg"}
-            alt="main-image"
-            layout="fill"
-          />
-        </div>
+    <main className="min-h-screen  ">
+      <Hero />
+      <Features />
+      <Templates />
+      <Pricing />
+      <FAQ />
+      <CTA />
 
-        <div className="w-1/2">
-          <h2 className="font-bold text-2xl ml-12">
-            세상에 단 하나뿐인 나만의 청첩장
-          </h2>
-        </div>
-      </section>
-
-      <section className="w-full flex justify-between items-center">
-        <div className="w-1/2">
-          <h2 className="font-bold text-2xl ml-12">
-            세상에 단 하나뿐인 나만의 청첩장
-          </h2>
-        </div>
-
-        <div className="relative w-1/2 h-[500px] overflow-hidden">
-          <Image
-            src={"/images/main/mobile_1.jpg"}
-            alt="main-image"
-            layout="fill"
-          />
-        </div>
-      </section>
+      <ScrollToTop />
     </main>
   );
 }

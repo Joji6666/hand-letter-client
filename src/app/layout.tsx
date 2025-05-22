@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 
+import Footer from "./shared/components/layout/Footer";
 import Navbar from "./shared/components/layout/Navbar";
 import { Providers } from "./providers";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           <AntdRegistry>
             <Navbar />
             {children}
+            <Footer />
           </AntdRegistry>
         </Providers>
       </body>

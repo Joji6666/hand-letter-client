@@ -16,6 +16,7 @@ export interface WorkData {
 export interface Template {
   name: string;
   elements: WorkData[];
+  imageUrl?: string;
 }
 
 export type NodeType =

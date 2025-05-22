@@ -52,12 +52,12 @@ const WorkCanvas = ({ workDatas, setCurrentWorkType }: Props): ReactElement => {
   };
 
   return (
-    <section className="w-[50%] h-full p-8 bg-zinc-100 flex flex-col gap-8">
+    <section className="w-[50%] h-full p-8 flex flex-col gap-8">
       <div>
         <button onClick={handlePreview}>미리보기</button>
         <button onClick={handleSave}>저장</button>
       </div>
-      <div className=" w-full h-full overflow-y-auto border border-zinc-400">
+      <div className=" w-full h-full overflow-y-auto border">
         {workDatas.map(
           (workData, index) =>
             currentPage === workData.page && (

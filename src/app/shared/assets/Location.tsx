@@ -3,7 +3,7 @@
 import React, { type ReactElement, useEffect, useRef, useState } from "react";
 import Script from "next/script";
 
-import Button from "../components/buttons/Button";
+import { Button } from "../components/buttons/Button";
 import TextInput from "../components/inputs/TextInput";
 
 declare global {

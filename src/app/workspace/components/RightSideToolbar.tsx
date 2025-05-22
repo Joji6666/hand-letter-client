@@ -6,9 +6,9 @@ interface Props {
 
 const RightSideToolbar = ({ currentWorkType }: Props): ReactElement => {
   return (
-    <section className="w-[25%] h-full bg-zinc-100 border-l border-zinc-300 ">
-      {currentWorkType}
-    </section>
+    <div className="flex w-[25%]  h-full flex-col  ">
+      <p>{currentWorkType}</p>
+    </div>
   );
 };
 
